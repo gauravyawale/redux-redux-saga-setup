@@ -1,6 +1,6 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, incrementAsync } from "../store/reducer";
+import { increment, decrement } from "../store/reducer";
 import type { RootState } from "../store/store";
 
 const Home = () => {
@@ -9,7 +9,9 @@ const Home = () => {
   return (
     <div>
       <h1>Counter: {counter}</h1>
-      <button onClick={() => dispatch(incrementAsync())}>Increment</button>
+      <button onClick={() => dispatch({ type: "counter/incrementAsync" })}>
+        Increment
+      </button>
       <button onClick={() => dispatch(decrement())}>Decrement</button>
     </div>
   );

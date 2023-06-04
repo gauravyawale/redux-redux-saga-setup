@@ -7,10 +7,6 @@ function* incrementAsync() {
   yield put(increment());
 }
 
-function* watchIncrementAsync() {
-  yield takeEvery("counter/incrementAsync", incrementAsync);
-}
-
 export function* rootSaga() {
-  yield watchIncrementAsync();
+  yield takeEvery("counter/incrementAsync", incrementAsync);
 }
